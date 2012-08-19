@@ -1,0 +1,9 @@
+ AWS::S3::Base.establish_connection!(:access_key_id     => "AKIAJFBKDNRFEQF3SCXQ",:secret_access_key => "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")
+#<AWS::S3::Connection:0x007fd87b827868 @options={:server=>"s3.amazonaws.com", :port=>80, :access_key_id=>"AKIAJFBKDNRFEQF3SCXQ", :secret_access_key=>"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"}, @access_key_id="AKIAJFBKDNRFEQF3SCXQ", @secret_access_key="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", @http=#<Net::HTTP s3.amazonaws.com:80 open=false>>
+Service.buckets
+[#<AWS::S3::Bucket:0x007fd87d8708e0 @attributes={"name"=>"birdman", "creation_date"=>2012-05-08 14:03:04 UTC}, @object_cache=[]>, #<AWS::S3::Bucket:0x007fd87d8704a8 @attributes={"name"=>"dev.doormates.building.images", "creation_date"=>2012-07-27 15:21:40 UTC}, @object_cache=[]>, #<AWS::S3::Bucket:0x007fd87d870408 @attributes={"name"=>"hotpocket", "creation_date"=>2012-08-19 00:12:47 UTC}, @object_cache=[]>, #<AWS::S3::Bucket:0x007fd87d870250 @attributes={"name"=>"staging.doormates.building.images", "creation_date"=>2012-07-27 20:06:13 UTC}, @object_cache=[]>]
+Bucket.find('hotpocket')
+#<AWS::S3::Bucket:0x007fd87b8f96b0 @attributes={"xmlns"=>"http://s3.amazonaws.com/doc/2006-03-01/", "name"=>"hotpocket", "prefix"=>nil, "marker"=>nil, "max_keys"=>1000, "is_truncated"=>false}, @object_cache=[]>
+hot_pocket = Bucket.find('hotpocket')
+#<AWS::S3::Bucket:0x007fd87b9a3598 @attributes={"xmlns"=>"http://s3.amazonaws.com/doc/2006-03-01/", "name"=>"hotpocket", "prefix"=>nil, "marker"=>nil, "max_keys"=>1000, "is_truncated"=>false}, @object_cache=[]>
+hot_pocket.objects.size

@@ -1,0 +1,27 @@
+<h1>Listing pockets</h1>
+
+<table>
+  <tr>
+    <th>Data url</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pockets.each do |pocket| %>
+  <tr>
+    <td><%= pocket.data_url %></td>
+    <td><%= pocket.latitude %></td>
+    <td><%= pocket.longitude %></td>
+    <td><%= link_to 'Show', pocket %></td>
+    <td><%= link_to 'Edit', edit_pocket_path(pocket) %></td>
+    <td><%= link_to 'Destroy', pocket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pocket', new_pocket_path %>

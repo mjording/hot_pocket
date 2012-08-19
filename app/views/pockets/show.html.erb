@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b> picture </b>
+  <%= image_tag @pocket.picture.url %>
+</p>
+<p>
+  <b>Data url:</b>
+  <%= @pocket.data_url %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @pocket.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @pocket.longitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_pocket_path(@pocket) %> |
+<%= link_to 'Back', pockets_path %>
